@@ -32,4 +32,20 @@
         </field>
     </record>
 
+    <record id="product_product_easy_form_view_extend" model="ir.ui.view">
+        <field name="name">product.product.easy.form.view.extend</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <group name="weight" position="after">
+                <group name="store" string="Storage Location" 
+                       attrs="{'invisible':[('type','=','service')]}" colspan="4">
+                    <field name="loc_rack"/>
+                    <field name="loc_row"/>
+                    <field name="loc_case"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
 </odoo>

@@ -32,17 +32,14 @@ class ProductTemplate(models.Model):
             template.loc_row = ""
             template.loc_case = ""
 
-    @api.multi
     def _set_loc_rack(self):
         if len(self.product_variant_ids) == 1:
             self.product_variant_ids.loc_rack = self.loc_rack
 
-    @api.multi
     def _set_loc_row(self):
         if len(self.product_variant_ids) == 1:
             self.product_variant_ids.loc_row = self.loc_row
 
-    @api.multi
     def _set_loc_case(self):
         if len(self.product_variant_ids) == 1:
             self.product_variant_ids.loc_case = self.loc_case
